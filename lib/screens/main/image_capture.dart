@@ -119,6 +119,24 @@ class _ImageCaptureState extends State<ImageCapture> {
               ),
               label: const Text('上传至云平台'),
             )
+          else if (status == 1)
+            ElevatedButton.icon(
+              onPressed: _startUpload,
+              icon: Icon(
+                Icons.cloud_upload,
+                size: 24.0,
+              ),
+              label: const Text('正在上传...'),
+            )
+          else if (status == 3)
+            ElevatedButton.icon(
+              onPressed: _startUpload,
+              icon: Icon(
+                Icons.cloud_upload,
+                size: 24.0,
+              ),
+              label: const Text('上传失败！请重试。'),
+            )
         ],
       ),
     );
@@ -157,6 +175,7 @@ class _ImageCaptureState extends State<ImageCapture> {
         FloatingActionButton(
           onPressed: () {
             _clear();
+            status = 0;
           },
           backgroundColor: Colors.redAccent,
           tooltip: '删除',
@@ -303,6 +322,7 @@ class _ImageCaptureState extends State<ImageCapture> {
         setState(() {
           _croppedFile = croppedFile;
           path = croppedFile.path;
+          status = 0;
         });
       }
     }
@@ -314,6 +334,7 @@ class _ImageCaptureState extends State<ImageCapture> {
       setState(() {
         _pickedFile = pickedFile;
         path = pickedFile.path;
+        status = 0;
       });
     }
   }
@@ -322,6 +343,7 @@ class _ImageCaptureState extends State<ImageCapture> {
     setState(() {
       _pickedFile = null;
       _croppedFile = null;
+      status = -1;
     });
   }
 }

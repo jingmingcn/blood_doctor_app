@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
                   Spacer(),
                   //SvgPicture.asset("assets/icons/gerda_logo.svg"),
                   Text(
-                    "血液病诊断诊疗系统",
+                    "血液病智能诊断系统",
                     style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
