@@ -1,4 +1,5 @@
 import 'package:doctor/models/Category.dart';
+import 'package:doctor/screens/diseases/diseases_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -53,7 +54,13 @@ class CategoryCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: defaultPadding),
       child: InkWell(
-        onTap: press,
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DiseasesScreen(),
+              ));
+        },
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         child: Container(
           padding: EdgeInsets.all(defaultPadding / 2),
