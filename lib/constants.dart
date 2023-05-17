@@ -11,6 +11,8 @@ const defaultPadding = 16.0;
 const emailError = '请输入正确的Email地址';
 const requiredField = "必填项";
 
+const bloodApiServer = 'bloodapi.nihds.com';
+
 final passwordValidator = MultiValidator(
   [
     RequiredValidator(errorText: '密码不能为空'),

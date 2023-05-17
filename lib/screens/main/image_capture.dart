@@ -1,11 +1,13 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:doctor/screens/main/report_result.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
+import 'package:doctor/constants.dart';
 
 class ImageCapture extends StatefulWidget {
   final String title;
@@ -20,7 +22,7 @@ class ImageCapture extends StatefulWidget {
 }
 
 class _ImageCaptureState extends State<ImageCapture> {
-  var imageUploadEndPoint = Uri.http("blood.nihds.com", "/imageUpload");
+  var imageUploadEndPoint = Uri.http(bloodApiServer, "/imageUpload");
   XFile? _pickedFile;
   CroppedFile? _croppedFile;
   String path = "";
@@ -43,7 +45,13 @@ class _ImageCaptureState extends State<ImageCapture> {
         setState(() {
           status = 2;
         });
+        print(res.body);
         blood = jsonDecode(res.body);
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => ReportResult(report: blood),
+          ),
+        );
       } else {
         setState(() {
           status = 3;
@@ -136,7 +144,7 @@ class _ImageCaptureState extends State<ImageCapture> {
                 size: 24.0,
               ),
               label: const Text('上传失败！请重试。'),
-            )
+            ),
         ],
       ),
     );
