@@ -193,7 +193,7 @@ class LoginScreen extends StatelessWidget {
                                       child: const SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          'Sign Up',
+                                          '注册',
                                           textAlign: TextAlign.center,
                                         ),
                                       ),

@@ -13,8 +13,13 @@ const requiredField = "必填项";
 
 const bloodApiServer = 'bloodapi.nihds.com';
 
-const bloodServer = 'localhost';
-const bloodServerPort = 8080;
+// Development
+// const bloodServer = 'localhost';
+// const bloodServerPort = 8080;
+
+// Production
+const bloodServer = 'blood.nihds.com';
+const bloodServerPort = 80;
 
 final passwordValidator = MultiValidator(
   [
