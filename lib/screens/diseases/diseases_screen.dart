@@ -13,11 +13,14 @@ class DiseasesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('知识普及'),
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children: [
-              CustomAppBar(text: "知识普及", title: "血液疾病"),
+              CustomAppBar(text: "", title: "血液疾病"),
               Padding(
                 padding: const EdgeInsets.all(defaultPadding),
                 child: GridView.builder(

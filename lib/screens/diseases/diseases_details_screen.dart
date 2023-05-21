@@ -1,5 +1,4 @@
 import 'package:doctor/components/heightlight.dart';
-import 'package:doctor/components/rating.dart';
 import 'package:doctor/constants.dart';
 import 'package:doctor/models/Disease.dart';
 import 'package:doctor/screens/appointment/appointment_screen.dart';
@@ -108,7 +107,7 @@ class DiseaseDetailsScreen extends StatelessWidget {
                       builder: (context) => AppointmentScreen(),
                     ),
                   ),
-                  child: Text("返回"),
+                  child: Text("预约"),
                 ),
               ),
             ],

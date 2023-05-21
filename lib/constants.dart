@@ -13,6 +13,9 @@ const requiredField = "必填项";
 
 const bloodApiServer = 'bloodapi.nihds.com';
 
+const bloodServer = 'localhost';
+const bloodServerPort = 8080;
+
 final passwordValidator = MultiValidator(
   [
     RequiredValidator(errorText: '密码不能为空'),
@@ -31,3 +34,5 @@ const InputDecoration dropdownInputDecoration = InputDecoration(
     borderSide: BorderSide(color: Colors.white),
   ),
 );
+
+const cellphoneMask = '###-####-####';

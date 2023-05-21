@@ -46,33 +46,66 @@ class _ReportResultState extends State<ReportResult> {
                       ],
                     ),
                     Divider(height: defaultPadding * 2),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: buildMetricInfo("日期", ""),
-                        ),
-                        Expanded(
-                          child: buildMetricInfo("时间", "上午 10:30"),
-                        ),
-                        Expanded(
-                          child: buildMetricInfo("医师", "彭军"),
-                        ),
-                      ],
-                    ),
-                    Divider(height: defaultPadding * 2),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: buildMetricInfo(
-                            "科室",
-                            "血液科",
+                    for (var i = 0; i < 8; i++) ...[
+                      Row(
+                        children: [
+                          Expanded(
+                            child: buildMetricInfo(
+                                i * 3 < 22
+                                    ? widget.report['bloodtest'][i * 3]['name']
+                                    : '',
+                                i * 3 < 22
+                                    ? widget.report['bloodtest'][i * 3]['alias']
+                                    : '',
+                                i * 3 < 22
+                                    ? widget.report['bloodtest'][i * 3]['value']
+                                    : '',
+                                i * 3 < 22
+                                    ? widget.report['bloodtest'][i * 3]['range']
+                                    : ''),
                           ),
-                        ),
-                        Expanded(
-                          child: buildMetricInfo("医院", "齐鲁医院"),
-                        ),
-                      ],
-                    ),
+                          Expanded(
+                            child: buildMetricInfo(
+                                (i * 3 + 1) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 1)]
+                                        ['name']
+                                    : '',
+                                (i * 3 + 1) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 1)]
+                                        ['alias']
+                                    : '',
+                                (i * 3 + 1) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 1)]
+                                        ['value']
+                                    : '',
+                                (i * 3 + 1) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 1)]
+                                        ['range']
+                                    : ''),
+                          ),
+                          Expanded(
+                            child: buildMetricInfo(
+                                (i * 3 + 2) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 2)]
+                                        ['name']
+                                    : '',
+                                (i * 3 + 2) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 2)]
+                                        ['alias']
+                                    : '',
+                                (i * 3 + 2) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 2)]
+                                        ['value']
+                                    : '',
+                                (i * 3 + 2) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 2)]
+                                        ['range']
+                                    : ''),
+                          ),
+                        ],
+                      ),
+                      Divider(height: defaultPadding * 2),
+                    ],
                   ],
                 ),
               ),
@@ -84,10 +117,15 @@ class _ReportResultState extends State<ReportResult> {
   }
 }
 
-Column buildMetricInfo(String title, String text) {
+Column buildMetricInfo(String title, String alias, String text, String range) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
+      Text(
+        text,
+        maxLines: 1,
+        style: TextStyle(fontWeight: FontWeight.w600),
+      ),
       Text(
         title,
         style: TextStyle(
@@ -96,9 +134,19 @@ Column buildMetricInfo(String title, String text) {
         ),
       ),
       Text(
-        text,
+        alias,
+        style: TextStyle(
+          fontSize: 12,
+          color: textColor.withOpacity(0.62),
+        ),
+      ),
+      Text(
+        range,
         maxLines: 1,
-        style: TextStyle(fontWeight: FontWeight.w600),
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+          color: textColor.withOpacity(0.62),
+        ),
       ),
     ],
   );

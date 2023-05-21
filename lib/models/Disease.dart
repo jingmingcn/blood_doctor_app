@@ -33,7 +33,7 @@ const List<Disease> demo_diseases = [
       treatment:
           '治疗淋巴瘤可能会合并化学治疗、放射线治疗、标靶治疗及手术等多种方式。非何杰金氏淋巴瘤患者的血液可能因蛋白质成分增多而较浓稠，需要接受血浆置换的治疗。某些型态的淋巴瘤可能必须采用所谓「观察等待」的策略，而某些型态则可治愈。在美国，何杰金氏淋巴瘤的五年整体存活率约85%，而非何杰金氏淋巴瘤则仅69%。在2012年，约有566,000人罹患淋巴瘤，并造成305,000死亡，占所有癌症的3至4%，为第七常见，而在儿童则为第三常见。相对于发展中国家，淋巴瘤通常多发生在发达国家。非何杰金氏淋巴瘤在美国的五年存活率为72%，何杰金氏淋巴瘤的五年存活率为87%。',
       image: 'assets/images/disease-lymphoma.jpeg',
-      incidence: '0.02‰',
+      incidence: '0.2‱',
       specialty: '血液学、​肿瘤学'),
   Disease(
       name: '多发性⻣髓瘤',
@@ -56,7 +56,7 @@ const List<Disease> demo_diseases = [
       diagnosis: '',
       treatment: 'Disease',
       image: 'assets/images/disease-baixuebing.png',
-      incidence: '0.02‰',
+      incidence: '0.2‱',
       specialty: '血液学及肿瘤学'),
   Disease(
       name: '血小板减少性紫癜',
@@ -67,7 +67,7 @@ const List<Disease> demo_diseases = [
       diagnosis: '',
       treatment: 'Disease',
       image: 'assets/images/disease-purpura.jpg',
-      incidence: '儿童 0.8‱；成人 1.2‱',
+      incidence: '0.8‱, 1.2‱',
       specialty: '血液学'),
   Disease(
       name: '急性淋巴细胞白血病',
@@ -77,7 +77,7 @@ const List<Disease> demo_diseases = [
       diagnosis: '',
       treatment: 'Disease',
       image: 'assets/images/disease-Acute_leukemia-ALL.jpg',
-      incidence: '0.67/10万',
+      incidence: '0.067‱',
       specialty: '肿瘤学'),
   Disease(
       name: '过敏性紫癜',
@@ -88,7 +88,7 @@ const List<Disease> demo_diseases = [
       diagnosis: '',
       treatment: 'Disease',
       image: 'assets/images/disease-zidian.jpg',
-      incidence: '3/10万～26.7/10万',
+      incidence: '0.3‱～2.67‱',
       specialty: '血液学'),
   Disease(
       name: '再生障碍性贫血',
@@ -98,7 +98,7 @@ const List<Disease> demo_diseases = [
       diagnosis: '',
       treatment: 'Disease',
       image: 'assets/images/disease-zaizhang.jpg',
-      incidence: '0.74/10万',
+      incidence: '0.074‱',
       specialty: '血液学及肿瘤学'),
   Disease(
       name: '噬血细胞综合症',
@@ -108,7 +108,7 @@ const List<Disease> demo_diseases = [
       diagnosis: '',
       treatment: 'Disease',
       image: 'assets/images/disease-shixue.jpg',
-      incidence: '1~10/100万',
+      incidence: '0.01‱～0.1‱',
       specialty: '血液学'),
   Disease(
       name: '⻣髓增生异常综合征',
@@ -118,6 +118,6 @@ const List<Disease> demo_diseases = [
       diagnosis: '',
       treatment: 'Disease',
       image: 'assets/images/disease-mds.jpg',
-      incidence: '4/10万',
+      incidence: '0.4‱',
       specialty: '血液学、肿瘤学')
 ];

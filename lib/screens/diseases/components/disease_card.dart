@@ -42,6 +42,7 @@ class DiseaseCard extends StatelessWidget {
                   Text(
                     disease.alias,
                     style: Theme.of(context).textTheme.caption,
+                    maxLines: 1,
                   ),
                   Spacer(),
                   Text(
@@ -53,9 +54,10 @@ class DiseaseCard extends StatelessWidget {
                   Text(
                     "${disease.incidence}",
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
+                    maxLines: 1,
                   ),
                   Spacer(),
                   Text(
@@ -67,7 +69,7 @@ class DiseaseCard extends StatelessWidget {
                   Text(
                     disease.specialty,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

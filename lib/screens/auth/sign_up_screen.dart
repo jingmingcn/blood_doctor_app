@@ -15,7 +15,7 @@ class SignUpScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Sign Up",
+                "注册",
                 style: Theme.of(context)
                     .textTheme
                     .headline4!
@@ -23,7 +23,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Text("Already have an account?"),
+                  Text("已经注册?"),
                   TextButton(
                     onPressed: () => Navigator.push(
                       context,
@@ -31,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
                         builder: (context) => SignInScreen(),
                       ),
                     ),
-                    child: Text("Sign In!"),
+                    child: Text("登录!"),
                   )
                 ],
               ),
