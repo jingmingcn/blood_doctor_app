@@ -44,16 +44,6 @@ class DiseaseDetailsScreen extends StatelessWidget {
               ),
               SizedBox(height: defaultPadding),
               Text(
-                "介绍",
-                style: Theme.of(context).textTheme.subtitle2,
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: defaultPadding / 2),
-                child: Text(disease.introduction),
-              ),
-              SizedBox(height: defaultPadding),
-              Text(
                 "症状",
                 style: Theme.of(context).textTheme.subtitle2,
               ),
