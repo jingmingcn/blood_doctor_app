@@ -17,6 +17,7 @@ class _ReportResultState extends State<ReportResult> {
   @override
   Widget build(BuildContext context) {
     var result = widget.report['result'];
+    var label = widget.report['label'];
     return Scaffold(
       appBar: AppBar(title: Text("风险预警报告")),
       body: SafeArea(
@@ -38,9 +39,10 @@ class _ReportResultState extends State<ReportResult> {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {},
-                            style:
-                                TextButton.styleFrom(backgroundColor: redColor),
-                            child: Text(result),
+                            style: TextButton.styleFrom(
+                                backgroundColor:
+                                    result == 1 ? redColor : primaryColor),
+                            child: Text(label),
                           ),
                         ),
                       ],
@@ -51,37 +53,39 @@ class _ReportResultState extends State<ReportResult> {
                         children: [
                           Expanded(
                             child: buildMetricInfo(
-                                i * 3 < 22
-                                    ? widget.report['bloodtest'][i * 3]['name']
-                                    : '',
-                                i * 3 < 22
-                                    ? widget.report['bloodtest'][i * 3]['alias']
-                                    : '',
-                                i * 3 < 22
-                                    ? widget.report['bloodtest'][i * 3]['value']
-                                    : '',
-                                i * 3 < 22
-                                    ? widget.report['bloodtest'][i * 3]['range']
-                                    : ''),
+                              i * 3 < 22
+                                  ? widget.report['bloodtest'][i * 3]['name']
+                                  : '',
+                              i * 3 < 22
+                                  ? widget.report['bloodtest'][i * 3]['alias']
+                                  : '',
+                              i * 3 < 22
+                                  ? widget.report['bloodtest'][i * 3]['value']
+                                  : '',
+                              i * 3 < 22
+                                  ? widget.report['bloodtest'][i * 3]['range']
+                                  : '',
+                            ),
                           ),
                           Expanded(
                             child: buildMetricInfo(
-                                (i * 3 + 1) < 22
-                                    ? widget.report['bloodtest'][(i * 3 + 1)]
-                                        ['name']
-                                    : '',
-                                (i * 3 + 1) < 22
-                                    ? widget.report['bloodtest'][(i * 3 + 1)]
-                                        ['alias']
-                                    : '',
-                                (i * 3 + 1) < 22
-                                    ? widget.report['bloodtest'][(i * 3 + 1)]
-                                        ['value']
-                                    : '',
-                                (i * 3 + 1) < 22
-                                    ? widget.report['bloodtest'][(i * 3 + 1)]
-                                        ['range']
-                                    : ''),
+                              (i * 3 + 1) < 22
+                                  ? widget.report['bloodtest'][(i * 3 + 1)]
+                                      ['name']
+                                  : '',
+                              (i * 3 + 1) < 22
+                                  ? widget.report['bloodtest'][(i * 3 + 1)]
+                                      ['alias']
+                                  : '',
+                              (i * 3 + 1) < 22
+                                  ? widget.report['bloodtest'][(i * 3 + 1)]
+                                      ['value']
+                                  : '',
+                              (i * 3 + 1) < 22
+                                  ? widget.report['bloodtest'][(i * 3 + 1)]
+                                      ['range']
+                                  : '',
+                            ),
                           ),
                           Expanded(
                             child: buildMetricInfo(
