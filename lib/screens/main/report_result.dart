@@ -66,6 +66,9 @@ class _ReportResultState extends State<ReportResult> {
                               i * 3 < 22
                                   ? widget.report['bloodtest'][i * 3]['range']
                                   : '',
+                              i * 3 < 22
+                                  ? widget.report['bloodtest'][i * 3]['warn']
+                                  : 0,
                             ),
                           ),
                           Expanded(
@@ -86,6 +89,10 @@ class _ReportResultState extends State<ReportResult> {
                                   ? widget.report['bloodtest'][(i * 3 + 1)]
                                       ['range']
                                   : '',
+                              (i * 3 + 1) < 22
+                                  ? widget.report['bloodtest'][(i * 3 + 1)]
+                                      ['warn']
+                                  : 0,
                             ),
                           ),
                           Expanded(
@@ -105,7 +112,11 @@ class _ReportResultState extends State<ReportResult> {
                                 (i * 3 + 2) < 22
                                     ? widget.report['bloodtest'][(i * 3 + 2)]
                                         ['range']
-                                    : ''),
+                                    : '',
+                                (i * 3 + 2) < 22
+                                    ? widget.report['bloodtest'][(i * 3 + 2)]
+                                        ['warn']
+                                    : 0),
                           ),
                         ],
                       ),
@@ -133,37 +144,45 @@ class _ReportResultState extends State<ReportResult> {
   }
 }
 
-Column buildMetricInfo(String title, String alias, String text, String range) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        text,
-        maxLines: 1,
-        style: TextStyle(fontWeight: FontWeight.w600),
-      ),
-      Text(
-        title,
-        style: TextStyle(
-          fontSize: 12,
-          color: textColor.withOpacity(0.62),
+Container buildMetricInfo(
+    String title, String alias, String text, String range, int warn) {
+  return Container(
+    margin: EdgeInsets.all(5),
+    padding: EdgeInsets.all(5),
+    decoration: BoxDecoration(
+        color: warn == 1 ? Colors.pink[100] : Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(5))),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          text,
+          maxLines: 1,
+          style: TextStyle(fontWeight: FontWeight.w600),
         ),
-      ),
-      Text(
-        alias,
-        style: TextStyle(
-          fontSize: 12,
-          color: textColor.withOpacity(0.62),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 12,
+            color: textColor.withOpacity(0.62),
+          ),
         ),
-      ),
-      Text(
-        range,
-        maxLines: 1,
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-          color: textColor.withOpacity(0.62),
+        Text(
+          alias,
+          style: TextStyle(
+            fontSize: 12,
+            color: textColor.withOpacity(0.62),
+          ),
         ),
-      ),
-    ],
+        Text(
+          range,
+          maxLines: 1,
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: textColor.withOpacity(0.62),
+          ),
+        ),
+      ],
+    ),
   );
 }
