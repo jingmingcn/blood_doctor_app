@@ -1,4 +1,5 @@
 import 'package:doctor/constants.dart';
+import 'package:doctor/screens/details/doctor_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class ReportResult extends StatefulWidget {
@@ -110,6 +111,17 @@ class _ReportResultState extends State<ReportResult> {
                       ),
                       Divider(height: defaultPadding * 2),
                     ],
+                    ElevatedButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DoctorDetailsScreen(),
+                        ),
+                      ),
+                      style:
+                          TextButton.styleFrom(backgroundColor: primaryColor),
+                      child: Text('预约咨询'),
+                    )
                   ],
                 ),
               ),

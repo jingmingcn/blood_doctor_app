@@ -4,6 +4,7 @@ import 'package:doctor/screens/splash/home_screen.dart';
 import 'package:doctor/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:form_builder_validators/localization/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

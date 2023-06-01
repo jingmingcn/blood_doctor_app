@@ -1,3 +1,4 @@
+import 'package:doctor/Noti.dart';
 import 'package:doctor/constants.dart';
 import 'package:doctor/screens/home/home_screen.dart';
 import 'package:doctor/screens/main/main_screen.dart';
@@ -19,6 +20,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
     "上午 10:30",
     "上午 10:50",
     "下午 2:10",
+    "下午 2:30",
     "下午 2:50",
   ];
 
@@ -78,12 +80,22 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
           Padding(
             padding: const EdgeInsets.all(defaultPadding),
             child: ElevatedButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MyAppointmentScreen(),
-                ),
-              ),
+              onPressed: () {
+                Noti.showBigTextNotification(
+                    title: "【预约成功】",
+                    body: "尊敬的客户您好，您已成功预约【彭军主任医师】的专家门诊，请按时赴诊。",
+                    fln: flutterLocalNotificationsPlugin);
+                Noti.showBigTextNotification(
+                    title: "【预约提醒】",
+                    body: "尊敬的 彭军主任 您好，您有新的门诊预约，请注意查看。",
+                    fln: flutterLocalNotificationsPlugin);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyAppointmentScreen(),
+                  ),
+                );
+              },
               child: Text("预约"),
             ),
           ),

@@ -1,11 +1,16 @@
+import 'package:doctor/Noti.dart';
 import 'package:doctor/screens/appointment/my_appointment_screen.dart';
 import 'package:doctor/screens/doctors/doctors_screen.dart';
 import 'package:doctor/screens/home/home_screen.dart';
 import 'package:doctor/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import '../../constants.dart';
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -22,6 +27,13 @@ class _MainScreenState extends State<MainScreen> {
     ProfileScreen(),
   ];
   int _selectedPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    Noti.initialize(flutterLocalNotificationsPlugin);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
